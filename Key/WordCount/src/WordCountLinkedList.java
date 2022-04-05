@@ -21,11 +21,12 @@ public class WordCountLinkedList {
     }
 
     public static void everyOther(List<String> words) {
+//        using remove on a LinkedList without an iterator is SLOW because the list must be traversed from the front every time through the loop
 //        for (int i = 0; i < words.size(); i++) {
 //            words.remove(i);    // slow for a linked list - takes about 3-4 minutes
 //        }
 
-//      Using an iterator is very fast
+//      Using an iterator is very fast because the iterator remembers where we are each time through and only has to traverse one element to get to the next element
         Iterator<String> itr = words.iterator();
         while (itr.hasNext()) {
             itr.next();
